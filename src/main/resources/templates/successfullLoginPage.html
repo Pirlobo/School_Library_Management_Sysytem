@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Layout</title>
+
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <script type = "text/javascript" th:src = "@{/js/action.js}"></script>
+<link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+	
+
+</head>
+<body >
+<div class = "succefullpage-background center ">
+
+<div class = "container "> 
+		<form th:action="@{/doLogout}" >
+		<button>Logout</button>
+		</form>
+		
+		
+		<h1>Welcome</h1>
+	
+
+	<div th:if="${error}" th:text="${error}" class="alert alert-success">Message</div>
+
+	<div>
+		<a class="btn btn-primary " th:href="@{/searchBook}"> Search Book</a>
+	</div>
+	<br>
+	<div>
+		<a class="btn btn-primary" th:href="@{/searchCourses}">Register
+			For Classes</a>
+	</div>
+	<br>
+	<div>
+		<a class="btn btn-primary" th:href="@{/dropClasses}">Drop Classes
+			 </a>
+	</div>
+	<br>
+	<div>
+		<a class="btn btn-primary" th:href="@{/getAllRequiredBooks}"> Your
+			required books</a>
+	</div>
+	</div>
+	
+</div>
+	
+</body>
+</html>

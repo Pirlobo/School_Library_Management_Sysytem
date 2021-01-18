@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Registration Page</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <script type = "text/javascript" th:src = "@{/js/action.js}"></script>
+<link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+	
+
+</head>
+<body >
+
+<div  class="container text"  style="background-image: url('https://bloximages.chicago2.vip.townnews.com/missoulian.com/content/tncms/assets/v3/editorial/8/59/85914151-3836-5a23-923f-172ffb0da553/5edaee8e328b0.preview.jpg?crop=900%2C506%2C0%2C0&resize=1200%2C675&order=crop%2Cresize');
+    background-repeat: no-repeat;
+    height: 100vh;
+    width : 100vw;
+    background-size: cover; text-decoration: underline;"  >
+    <h1>Registration Page</h1>
+    <form id="userForm" th:action="@{/signup}" th:object="${user}" action="#" method="post" class="form-horizontal ">
+        <div th:if="${#fields.hasErrors('global')}" th:errors="*{global}" class="alert alert-danger">Incorrect password confirmation</div>
+        
+		<div class="form-group" th:classappend="${#fields.hasErrors('userName')} ? 'has-error'">
+            <label class="control-label col-xs-2" for="userName">User Name</label>
+            <div class="col-xs-10">
+                <input id="userName" type="text" title="userName" th:field="*{userName}"/>
+                <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" class="help-block">UserName Error</span>
+            </div>
+        </div>
+
+       
+        <div class="form-group" th:classappend="${#fields.hasErrors('password')} ? 'has-error'">
+            <label class="control-label col-xs-2" for="password">Password</label>
+            <div class="col-xs-3">
+                <input id="password" type="password" title="password" th:field="*{password}"/>
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="help-block">Password Error</span>
+            </div>
+        </div>
+       
+        
+        
+        
+         <div class="form-group" th:classappend="${#fields.hasErrors('email')} ? 'has-error'">
+            <label class="control-label col-xs-2" for="email">Email</label>
+            <div class="col-xs-10">
+                <input id="email" type="email" title="email" th:field="*{email}"/>
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="help-block">Email Error</span>
+            </div>
+        </div>
+        
+         <div class="form-group" th:classappend="${#fields.hasErrors('person.name')} ? 'has-error'">
+            <label class="control-label col-xs-2" for="person.name">Name</label>
+            <div class="col-xs-10">
+                <input id="name" type="text" title="name" th:field="*{person.name}"/>
+                <span th:if="${#fields.hasErrors('person.name')}" th:errors="*{person.name}" class="help-block">Name Error</span>
+            </div>
+        </div>
+        
+         <div class="form-group" th:classappend="${#fields.hasErrors('person.phone')} ? 'has-error'">
+            <label class="control-label col-xs-2" for="person.phone">Phone Number</label>
+            <div class="col-xs-10">
+                <input id="phone" type="text" title="phone" th:field="*{person.phone}"/>
+                <span th:if="${#fields.hasErrors('person.phone')}" th:errors="*{person.phone}" class="help-block">Phone Error</span>
+            </div>
+        </div>
+        
+        <div class="form-group" th:classappend="${#fields.hasErrors('person.adress.streetAdress')} ? 'has-error'">
+            <label class="control-label col-xs-2" for="person.adress.streetAdress">Street Adress</label>
+            <div class="col-xs-10">
+                <input id="streetAdress" type="text" title="phone" th:field="*{person.adress.streetAdress}"/>
+                <span th:if="${#fields.hasErrors('person.adress.streetAdress')}" th:errors="*{person.adress.streetAdress}" class="help-block">Phone Error</span>
+            </div>
+        </div>
+        
+        
+         <div class="form-group" th:classappend="${#fields.hasErrors('person.adress.city')} ? 'has-error'">
+            <label class="control-label col-xs-2" for="person.adress.city">City</label>
+            <div class="col-xs-10">
+                <input id="city" type="text" title="city" th:field="*{person.adress.city}"/>
+                <span th:if="${#fields.hasErrors('person.adress.city')}" th:errors="*{person.adress.city}" class="help-block">Phone Error</span>
+            </div>
+        </div>
+        
+         <div class="form-group" th:classappend="${#fields.hasErrors('person.adress.state')} ? 'has-error'">
+            <label class="control-label col-xs-2" for="person.adress.state">State</label>
+            <div class="col-xs-10">
+                <input id="state" type="text" title="state" th:field="*{person.adress.state}"/>
+                <span th:if="${#fields.hasErrors('person.adress.state')}" th:errors="*{person.adress.state}" class="help-block">Phone Error</span>
+            </div>
+        </div>
+        
+        
+         <div class="form-group" th:classappend="${#fields.hasErrors('person.adress.zipcode')} ? 'has-error'">
+            <label class="control-label col-xs-2" for="person.adress.zipcode">Zipcode</label>
+            <div class="col-xs-10">
+                <input id="zipcode" type="text" title="zipcode" th:field="*{person.adress.zipcode}"/>
+                <span th:if="${#fields.hasErrors('person.adress.zipcode')}" th:errors="*{person.adress.zipcode}" class="help-block">Phone Error</span>
+            </div>
+        </div>
+        
+        
+         <div class="form-group" th:classappend="${#fields.hasErrors('person.adress.country')} ? 'has-error'">
+            <label class="control-label col-xs-2" for="person.adress.city">Country</label>
+            <div class="col-xs-10">
+                <input id="country" type="text" title="country" th:field="*{person.adress.country}"/>
+                <span th:if="${#fields.hasErrors('person.adress.country')}" th:errors="*{person.adress.country}" class="help-block">Phone Error</span>
+            </div>
+        </div>
+        
+        <div class="form-actions col-xs-offset-2 col-xs-10">
+            <input type="submit" class="btn btn-primary" value="Register"/>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        options = {
+            common: {minChar:8},
+            ui: {
+                showVerdictsInsideProgressBar:true,
+                showErrors:true, 
+                errorMessages:{
+                    wordLength: 'Your password is too short',
+                    wordNotEmail: 'Do not use your email as your password',
+                    wordSequences: 'Your password contains sequences',
+                    wordLowercase: 'Use lower case characters',
+                    wordUppercase: 'Use upper case characters',
+                    wordOneNumber: 'Use numbers',
+                    wordOneSpecialChar: 'Use special characters: [~!@#$%^&amp;*,_?]'
+                }
+            }
+        };
+        $('#password').pwstrength(options);
+    });
+</script>
+</body>
+</html>

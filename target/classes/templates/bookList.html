@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+<script type="text/javascript" th:src="@{/js/action.js}"></script>
+<link type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet" />
+
+<title>Book List</title>
+</head>
+<body class="background-course">
+	<h1 class="text-align">Required Documentation</h1>
+	<div class="container">
+
+		<table
+			class="table table-striped  table-hover border border-primary my-auto ">
+			<thead class="thead-dark white-text">
+				<tr>
+
+					<th>ISBN</th>
+					<th>Course</th>
+					<th>Title</th>
+					<th>Publisher</th>
+					<th>Language</th>
+					<th>Number of Pages</th>
+					<th>Author</th>
+					<th>More Details</th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+				<tr th:each="bookItem : ${bookList}">
+
+					<td th:text="${bookItem.ISBN}"></td>
+					<td th:text="${bookItem.course.subject.subjectCode}"></td>
+					<td th:text="${bookItem.title}"></td>
+					<td th:text="${bookItem.publisher}"></td>
+					<td th:text="${bookItem.language}"></td>
+					<td th:text="${bookItem.numOfPages}"></td>
+
+
+					<td>
+						<p th:each="author : ${bookItem.authorList}">
+							<span th:text="${author.name}">Name</span>
+
+						</p>
+
+					</td>
+
+					<td>
+						<form action="/moreDetails" class="form-inline">
+							<input type="hidden" th:value="${bookItem.id}" name="bookItem" />
+							<input type="submit" value="Buy Now"
+								class="btn btn-primary ml-2 " />
+
+						</form>
+
+
+					</td>
+
+				</tr>
+			</tbody>
+
+
+
+		</table>
+
+
+	</div>
+
+
+
+
+</body>
+</html>

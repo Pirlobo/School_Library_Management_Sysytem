@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	 <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <script type = "text/javascript" th:src = "@{/js/action.js}"></script>
+<link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+	
+    <title>Book List</title>
+</head>
+<body class = "background-course" >
+<h1 class = "text-align">Purchase TextBook</h1>
+<div class = "container">
+<form th:action="@{/buyBook}" method="post" >
+<table  class="table table-striped  table-hover border border-primary my-auto " >
+<thead class="thead-dark white-text">
+<tr>
+<th >Buy This Book</th>
+<th >BarCode</th>
+<th>Format</th>
+<th>For Sell</th>
+<th>For Rent</th>
+<th>Rent</th>
+<th>Buy</th>
+</tr>
+</thead>
+
+<tbody >
+
+	
+
+	<tr th:each="bookItem : ${bookItems}" >
+	
+	<td >
+	<input type="checkbox" name="barcodes" th:value="${bookItem.barcode}" />
+	</td>
+	
+	<td th:text  = "${bookItem.barcode}"></td>
+	<td th:text = "${bookItem.format}"></td>
+	<td th:text = "${bookItem.sellingPrice} + ' $'"></td>
+	<td th:text = "${bookItem.rentalPrice} + ' $'"></td>
+	
+	
+	<td>
+	<select th:object="${forRentQuantity}" name="forRentQuantity"  >
+			<option th:value="0" th:text="0"></option>
+			<option th:value="1" th:text="1"></option>
+			
+		</select>
+	</td>
+	
+	<td>
+	<select th:object="${forSellQuantity}" name="forSellQuantity" >
+			<option th:value="0" th:text="0"></option>
+			<option th:value="1" th:text="1"></option>
+			<option th:value="2" th:text="2"></option>
+			<option th:value="3" th:text="3"></option>
+			<option th:value="4" th:text="4"></option>
+			<option th:value="5" th:text="5"></option>
+		</select>
+	</td>
+	
+	</tr>
+</tbody>
+
+
+
+</table>
+<br>
+<div class="text-center" >
+            <input type="submit" class="btn btn-primary" value="Submit"/>
+        </div>
+</form>
+
+
+</div>
+
+</body>
+</html>

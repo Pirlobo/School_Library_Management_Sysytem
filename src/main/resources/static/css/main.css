@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+.wrapper{
+    flex-direction: column;
+    background-color:#181818;
+    width: 100vw;
+    height: 100vh;
+   
+}
+
+.background {
+    background-image: url('https://thumbs.dreamstime.com/z/orange-digital-door-lock-wireless-technology-unlock-icon-isolated-green-background-handle-sign-security-smart-home-194555826.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}
+
+.succefullpage-background{
+    background-image: url('https://previews.123rf.com/images/motizova/motizova1608/motizova160800266/61508802-open-book-hardback-books-on-wooden-table-education-background-back-to-school-copy-space-for-text.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}
+.background-course{
+    background-image: url('https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}
+
+
+.left-background{
+    background-image: url("https://cdn2.iconfinder.com/data/icons/occupations-color-1/150/11-512.png");
+    height: 100vh;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: 20%;
+    margin-bottom: 15%;
+    background-size: 100% 100%;
+}
+.center{
+    padding: 70px 0px;
+}
+.text-align{
+	text-align: center;
+}
+
+.bottom-marginBottom{
+	position: relative;
+	top: 20px;
+}
+
+.text{
+	text-decoration: underline;
+	font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+.label{
+  
+   margin-left: 5px;
+    
+}
+
+.input-width{
+	width: 80%;
+}
+
+.width-button{
+	width:22.2%;
+}
+ .text-input {
+    width: 100%;
+    margin-bottom: 1.3rem;
+    border-radius: 2px;
+    color: black;
+    background-color: white; ;
+    padding: 0.5rem 1rem;
+    line-height: 1.3rem;
+    border-width: 1px;
+    border-color: purple;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 white;
+    transition: 0.3s;
+    width: 100%;
+   height: 40%;
+  }
+
+  .signUp-button{
+    margin-top: 3px;
+    width: 118%;
+    text-align: center;
+    color: white;
+    background-color: purple;
+    padding: 0.9rem 1rem 0.9rem 1rem ;
+    border-width: 2px;
+    opacity : 0.8;
+    border-color: purple;
+    
+  }
+ 
+  
+  .signIn-button{
+    margin-top: 15px;
+    width: 118%;
+    text-align: center;
+    color: white;
+    background-color: purple;
+    padding: 0.9rem 1rem 0.9rem 1rem ;
+    border-width: 2px;
+    opacity : 0.8;
+    border-color: purple;
+    
+  }
+  .signIn-button:hover{
+     
+      transition: all 0.5s;
+      opacity : 1.0;
+  }
+
+  .signUp-button:hover{
+     
+    transition: all 0.5s;
+    opacity : 1.0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Layout</title>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+html {
+  margin: 0px;
+  padding: 0px;
+}
+#wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.second-half-nav {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  justify-content: flex-end;
+  align-items: center;
+}
+.first-half-nav {
+  display: flex;
+  flex-direction: row;
+  padding-right: 2rem;
+  width: 70%;
+  align-items: center;
+}
+.header {
+  background: url("https://www.pluralsight.com/content/pluralsight/en/blog/news/sta/stay-home-skill-up-for-free/jcr:content/image-res/file.transform/share-image/image.img.5913b08c-a69b-4db3-894c-6ffab9c0ad7b.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+ 
+}
+.text-alert{
+margin-top: 10px
+}
+button#service {
+  width: 6rem;
+}
+.service-content-none {
+  display: none;
+}
+.service-content {
+  display: flex;
+  flex-direction: column;
+  width: 8rem;
+  margin-top: 1rem;
+  
+}
+.flex-start{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.text-color {
+  color: white;
+  text-decoration: none;
+  transition: 0.1s;
+}
+a#primary-link {
+  color: #0080ff;
+  text-decoration: underline;
+}
+a.primary-link {
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+a#a:hover  {
+  text-decoration: underline;
+  color: #0080ff;
+  border-bottom: 4px solid transparent;
+}
+a#b:hover  {
+  text-decoration: underline;
+  color: #0080ff;
+}
+
+
+
+.button {
+  margin-right: 1rem;
+  color: #0080ff;
+  width: 4rem;
+  height: 2rem;
+  background-color: black;
+  border-color: #0080ff;
+  border-width: 1px;
+  border-radius: 25px;
+  align-items: center;
+  outline: none;
+}
+.button:hover {
+  color: black;
+  background-color: #0080ff;
+  border-top: 4px solid transparent !important;
+
+}
+.default_option {
+  color: white;
+  opacity: 0.5;
+}
+select#service {
+  color: #0080ff;
+  outline: none;
+  width: 5rem;
+  background-color: black;
+  border-color: #0080ff;
+  border-width: 1px;
+  border-radius: 25px;
+  height: 1.8rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 4rem;
+  width: 100vw;
+}
+.main__nav {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  flex-direction: row;
+  margin-top: 25px;
+ 
+  align-items: center;
+}
+
+.logo {
+  flex-grow: 1;
+}
+.mb {
+  flex-grow: 1;
+}
+@media (max-width: 740px) {
+  .md\:main__nav {
+    display: none;
+  }
+}
+#width{
+    width: 12rem;
+}
+
+</style>
+</head>
+<body>
+    <!-- <div id = "wrapper">
+        
+        <div class = "top">
+            <div class = "row">
+                <div class="logo">Logo</div>
+                <div class = "mb">Mobile</div>
+                <ul class = "main__nav md:main__nav">
+                   <a href = ""> Home</a>
+                    <a href = ""> Services</a>
+                    <a href = ""> About</a>
+                    <a href = ""> Contact</a>
+                    <a href = ""> News</a>
+                    <a href = ""> FAQ</a>
+        
+                </ul>
+            </div>
+        </div>
+        <div class = "bottom">
+            <div class = "header">
+                
+            </div>
+        </div>
+        </div> -->
+
+
+        <div class = "header">
+           
+            <div class = "row">
+                
+                
+                    <div class = "first-half-nav" >
+                        <ul class = "main__nav md:main__nav">
+                            <a id = "a" class = "text-color"   href = ""> Home</a>
+                             <a id = "a" class = "text-color" href = ""> About</a>
+                             <a id = "a" class = "text-color" href = ""> Contact</a>
+                             <a id = "a" class = "text-color" href = "">View Comment</a>
+                               <a id = "a" class = "text-color" href = "/studentPage">Services</a>
+                          <!-- <div id = "width">
+                       
+                                <button id = "service" class = "button">Services
+                                    <i class='fas fa-arrow-circle-down flex-end'></i>
+                                    <div class = "service-content-none">
+                                        <div class = " service-content">
+                                            <a id = "b"class = "text-color  flex-start" th:href="@{/searchBook}"><span>Search Book</span></a>
+                                            
+                                            <a id = "b" class = "text-color flex-start"  th:href="@{/searchCourses}">Register For Classes</a>
+                                            <a  id = "b" class = "text-color flex-start" th:href="@{/dropClasses}">Drop Classes</a>
+                                            <a  id = "b" class = "text-color flex-start" th:href="@{/getAllRequiredBooks}">Book Required</a>
+                                           </div>
+                                           
+                                  
+    
+                                    
+                                    </div>
+                                 </button>
+                                 
+                            </div> -->
+                            
+                            
+                             <!-- <select id = "service">
+                                 <option disabled selected ><p>Services</p></option>
+                                 <option value="Search Book" >Search Book</option>
+                                 <option value="Register For Classes" >Register For Classes</option>
+                                 <option value="Drop Classes" >Drop Classes</option>
+                                 <option value="Book Required" >Book Required</option>
+                             </select> -->
+                         </ul>
+                         
+                    </div>
+                    <form  class = "second-half-nav" th:action="@{/doLogout}">
+                    <button class = "button">Logout</button>
+                    </form>
+                    
+                   
+            </div>
+             
+        </div>
+</body>
+<script >
+    
+    let a = document.getElementById("primary-link");
+    var length = document.querySelectorAll('ul > a').length;
+    console.log(length);
+for(i = 1; i < length; i++){
+document.querySelectorAll('a')[i].addEventListener('mouseover', () => {
+    
+    a.className = "primary-link";
+    a.removeAttribute('id');
+    // add or remove a class from a selected item
+    //a.classList.remove('')
+    // a.classList.add('')
+    
+})
+}
+let button = document.getElementsByTagName('button')[0];
+let serviceContent = document.querySelector('.service-content-none');
+
+button.addEventListener('mouseenter', () => {
+    serviceContent.className = "";
+})
+
+button.addEventListener('mouseleave', () => {
+    serviceContent.className = "service-content-none";
+})
+
+for(i = 1; i < length; i++){
+document.querySelectorAll('a')[i].addEventListener('mouseleave', () => {
+    // a.innerHTML = ' <a   id = "primary-link"  href = "https://www.youtube.com/watch?v=ZY3dKomb5as"> Home</a>';
+    a.setAttribute('id', "primary-link");
+})
+}
+   
+    
+    
+    // a.addEventListener('mouseenter', () =>  a.innerHTML = '<a class = "text-color  "href = ""> Home</a>');
+    // a.addEventListener('mouseleave', () =>  a.innerHTML = ' <a   id = "primary-link" class = "text-color  "href = ""> Home</a>');
+</script>
+</html>

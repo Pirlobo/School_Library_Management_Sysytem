@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Layout</title>
+
+ <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" />
+	 <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <script type = "text/javascript" th:src = "@{/js/action.js}"></script>
+
+	
+</head>
+<body>
+
+<div th:if="${error}" th:text="${error}" class="alert alert-success">Message</div>
+	<form th:action="@{/searchCoursesByTitle}" 
+		method="get" class="form-horizontal">
+		<select th:object="${title}" name="title" >
+			<option th:value="'COMSC_75'" th:text="COMSC_75"></option>
+			<option th:value="COMSC_76" th:text="COMSC_76"></option>
+		</select>
+		 <input type="submit" value="Search"  class="btn btn-primary ml-2 "/>
+	</form>
+
+<br>
+<form th:action="@{/searchCoursesBySubject}" 
+		method="get" class="form-horizontal">
+		<select th:object="${area}" name="subject" >
+			<option th:value="'Computer_Science'" th:text="Computer_Science"></option>
+			<option th:value="Math" th:text="Math"></option>
+		</select>
+		 <input type="submit" value="Search"  class="btn btn-primary ml-2 "/>
+	</form>
+
+</body>
+</html>

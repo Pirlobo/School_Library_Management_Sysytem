@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Layout</title>
+
+<link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <h1>
+    
+   Search Book By Title or Author's name
+    
+ 
+    </h1>
+   
+   
+    
+    <div th:if="${error}" th:text="${error}" class="alert alert-success">Message</div>
+    <div>
+	     <form action="/searchBookByTitleOrAuthor"  class="form-inline">
+	        
+	         <input type="text" class="form-control" name="argument" placeholder="Search By Title Or Author" />
+	         <input type="submit" value="Search"  class="btn btn-primary ml-2 "/>
+	       
+	     </form>
+		
+	</div>
+	
+	
+	
+    
+</body>
+</html>
